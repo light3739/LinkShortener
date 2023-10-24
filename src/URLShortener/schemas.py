@@ -1,19 +1,11 @@
-from typing import Optional
-
-from pydantic import BaseModel, Field
-
-
-class UrlBase(BaseModel):
-    original_url: str = Field(..., description="The original URL to be shortened")
+from fastapi import UploadFile, File
+from pydantic import BaseModel
 
 
-class UrlCreate(UrlBase):
-    pass
+class UrlIn(BaseModel):
+    filename: str
 
 
-class Url(UrlBase):
-    id: int = Field(..., description="The ID of the shortened URL")
-    short_url: Optional[str] = Field(None, description="The shortened URL")
-
-    class Config:
-        orm_mode = True
+class FileUpload(BaseModel):
+    file: UploadFile = File(...)
+    short_url: str

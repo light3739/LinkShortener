@@ -4,8 +4,12 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from alembic import context
-from src.config import DB_HOST, DB_PORT, DB_USER, DB_NAME, DB_PASS
+
 from src.URLShortener.models import metadata
+from src.config import DB_HOST, DB_PORT, DB_USER, DB_NAME, DB_PASS
+
+
+# this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
 
@@ -15,6 +19,7 @@ config.set_section_option(section, "DB_PORT", DB_PORT)
 config.set_section_option(section, "DB_USER", DB_USER)
 config.set_section_option(section, "DB_NAME", DB_NAME)
 config.set_section_option(section, "DB_PASS", DB_PASS)
+
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
 if config.config_file_name is not None:
@@ -25,7 +30,6 @@ if config.config_file_name is not None:
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
 target_metadata = metadata
-
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
