@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, UploadFile, File
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from src.URLShortener.schemas import FileUpload
 from src.URLShortener.service import upload_file, download_file
 from src.database import get_async_session
 
@@ -11,8 +12,10 @@ router = APIRouter(
 
 
 @router.post("/upload")
-async def upload(file: UploadFile = File(...), database: AsyncSession = Depends(get_async_session)):
-    return await upload_file(database, file)
+async def upload(file: UploadFile = File(...),
+                 database: AsyncSession = Depends(get_async_session)):
+    file_data = FileUpload(short_url="string", is_password=True)
+    return await upload_file(file_data, database, file)
 
 
 @router.get("/download")

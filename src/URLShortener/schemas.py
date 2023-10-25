@@ -1,5 +1,7 @@
+from typing import Union
+
 from fastapi import UploadFile, File
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class UrlIn(BaseModel):
@@ -7,5 +9,5 @@ class UrlIn(BaseModel):
 
 
 class FileUpload(BaseModel):
-    file: UploadFile = File(...)
-    short_url: str
+    short_url: str = None
+    is_password: bool = None
