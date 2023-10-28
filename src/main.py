@@ -1,9 +1,5 @@
-from urllib.parse import quote
-
-import aioboto3
-from fastapi import FastAPI, Depends, HTTPException, UploadFile, File
+from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import StreamingResponse
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from starlette.responses import RedirectResponse
@@ -15,9 +11,6 @@ from src.database import get_async_session
 BUCKET_NAME = 'fastdropbucket'
 
 app = FastAPI()
-# s3 = aioboto3.client("s3",
-#                   aws_access_key_id="AKIA6AL67PMPCJNM4JGV",
-#                   aws_secret_access_key="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")
 
 origins = [
     "http://localhost:3000",
@@ -36,12 +29,6 @@ app.add_middleware(
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
-
-
-
-
-
-
 
 
 @app.get("/{short_url}")

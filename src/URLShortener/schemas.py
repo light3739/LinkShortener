@@ -1,13 +1,13 @@
-from typing import Union
+from typing import Optional
 
-from fastapi import UploadFile, File
-from pydantic import BaseModel, Field
-
-
-class UrlIn(BaseModel):
-    filename: str
+from pydantic import BaseModel
 
 
 class FileUpload(BaseModel):
     short_url: str = None
     is_password: bool = None
+
+
+class FileDownload(BaseModel):
+    short_url: str = None
+    password: Optional[str] = None
