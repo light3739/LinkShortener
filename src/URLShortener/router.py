@@ -1,8 +1,8 @@
-from typing import Optional
-
 from fastapi import APIRouter, Depends, UploadFile, File, Form
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from src.URLShortener.dependencies import validate_download_data
+from src.URLShortener.models import Url
 from src.URLShortener.schemas import FileUpload, FileDownload
 from src.URLShortener.service import upload_file, download_file
 from src.database import get_async_session
@@ -22,6 +22,5 @@ async def upload(is_password: bool = Form(...),
 
 
 @router.get("/download")
-async def download(short_url: str, password: Optional[str] = None, database: AsyncSession = Depends(get_async_session)):
-    file_data_download = FileDownload(short_url=short_url, password=password)
-    return await download_file(file_data_download, database)
+async def download(file_data_download: FileDownload = Depends(), db_url: Url = Depends(validate_download_data)):
+    return await download_file(file_data_download, db_url)

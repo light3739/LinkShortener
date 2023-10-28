@@ -9,5 +9,5 @@ class FileUpload(BaseModel):
 
 
 class FileDownload(BaseModel):
-    short_url: str = None
+    short_url: str
     password: Optional[str] = None
