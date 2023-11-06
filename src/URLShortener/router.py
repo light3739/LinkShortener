@@ -8,7 +8,6 @@ from src.URLShortener.service import upload_file, download_file
 from src.database import get_async_session
 
 router = APIRouter(
-    prefix="/operations",
     tags=["Operation"]
 )
 

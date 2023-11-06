@@ -21,6 +21,7 @@ aioboto3 = "^11.3.1"
 passlib = "^1.7.4"
 bcrypt = "^4.0.1"
 ujson = "^5.8.0"
+jinja2 = "^3.1.2"
 
 
 [build-system]

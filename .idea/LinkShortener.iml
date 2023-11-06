@@ -6,5 +6,8 @@
     </content>
     <orderEntry type="jdk" jdkName="Poetry (LinkShortener)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jszip" level="application" />
+    <orderEntry type="library" name="draggable" level="application" />
+    <orderEntry type="library" name="jszip" level="application" />
   </component>
 </module>
