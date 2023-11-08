@@ -89,7 +89,8 @@ body {
     }
 }
 
-.img {
+.img-arrow {
+
     aspect-ratio: 1;
     object-fit: contain;
     object-position: center;
@@ -97,10 +98,13 @@ body {
     overflow: hidden;
     max-width: 100%;
     margin: auto 0;
+    transition: transform 1s ease, width 1s ease; /* Add width transition */
+    cursor: pointer;
 }
 
+
 @media (max-width: 991px) {
-    .img {
+    .img-arrow {
         margin-top: 40px;
     }
 }
@@ -250,14 +254,26 @@ body {
     gap: 10px;
 }
 
-.img-5 {
-    aspect-ratio: 0.96;
-    object-fit: contain;
-    object-position: center;
-    width: 100%;
-    fill: #231f20;
-    overflow: hidden;
-    flex: 1;
+.radio-button {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: 2px solid #ccc;
+    appearance: none;
+    cursor: pointer;
+}
+
+.radio-button:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.radio-label {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .div-11 {
@@ -294,12 +310,13 @@ body {
     max-width: 100%;
 }
 
-.div-13 {
+.label-text {
     color: #000;
     letter-spacing: 0.4px;
     align-self: center;
     white-space: nowrap;
-    margin: auto 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
     font: 500 16px Solway, sans-serif;
 }
 

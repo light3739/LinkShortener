@@ -3,6 +3,7 @@
 <head>
     <title>Your Page Title</title>
     <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
 </head>
 <body>
@@ -16,8 +17,8 @@
                         <div class="column-2">
                             <img
                                     loading="lazy"
-                                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/593aa166-e9a9-43fc-8f7e-ca678d9d1e6b?apiKey=7e12f2621b104e7ba0d0b3ee7e503740&"
-                                    class="img"
+                                    src="{{ url_for('static', path='images/arrow.svg') }}"
+                                    class="img-arrow"
                             />
                         </div>
                         <div class="column-3" id="drop-area" draggable="true">
@@ -58,20 +59,13 @@
                 class="img-4"
         />
         <div class="div-10">
-            <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/56dd0f7f-5e3e-4d5c-8a91-ba1fd5f3fca7?apiKey=7e12f2621b104e7ba0d0b3ee7e503740&"
-                    class="img-5"
-            />
-            <div class="div-11">1 day</div>
+            <input type="radio" id="radio-1" name="radio-group" class="radio-button">
+            <label for="radio-1" class="label-text">1 day</label>
         </div>
+
         <div class="div-12">
-            <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/c6ec46dc-bc97-42e1-a177-52eb80410d93?apiKey=7e12f2621b104e7ba0d0b3ee7e503740&"
-                    class="img-6"
-            />
-            <div class="div-13">1 download</div>
+            <input type="radio" id="radio-2" name="radio-group" class="radio-button">
+            <label for="radio-2" class="label-text">1 download</label>
         </div>
         <img
                 loading="lazy"
