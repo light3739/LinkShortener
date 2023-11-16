@@ -6,21 +6,22 @@ authors = ["light3739 <51126304+light3739@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.8"
-fastapi = "^0.104.0"
-pydantic = "^2.4.2"
-sqlalchemy = "^2.0.22"
-uvicorn = "^0.23.2"
-alembic = "^1.12.0"
-python-dotenv = "^1.0.0"
-asyncpg = "^0.28.0"
-shortuuid = "^1.0.11"
+python = "^3.10"
+fastapi = "^0.104.1"
+pydantic = "^2.5.1"
+sqlalchemy = "^2.0.23"
+uvicorn = "^0.24.0.post1"
 python-multipart = "^0.0.6"
-aioboto3 = "^11.3.1"
+aioboto3 = "^12.0.0"
+alembic = "^1.12.1"
+python-dotenv = "^1.0.0"
+asyncpg = "^0.29.0"
+shortuuid = "^1.0.11"
 passlib = "^1.7.4"
 bcrypt = "^4.0.1"
 ujson = "^5.8.0"
 jinja2 = "^3.1.2"
+
 
 
 [build-system]
